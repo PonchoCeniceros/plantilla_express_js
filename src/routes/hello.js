@@ -24,6 +24,28 @@ helloRoutes.use(async (request, response, next) => {
 });
 
 
+/**
+ * @swagger
+ * /:
+ *   get:
+ *     summary: Saludar al usuario
+ *     description: Retorna un mensaje de saludo personalizado utilizando el nombre de usuario proporcionado en la solicitud.
+ *     security:
+ *       - BearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Saludo exitoso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "¡Hola Mundo, usuario!"
+ *     tags:
+ *       - Saludos
+ */
 helloRoutes.get("/", sayHello);
 
 export default helloRoutes;
